@@ -6,9 +6,8 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     private Rigidbody rb;
-    private float moveSpeed = 5.0f;
     private float punchPower = 5.0f;
-    private float angleSpeed = 10.0f;
+    private float angleSpeed = 5.0f;
 
     private Transform tf;
 
@@ -25,7 +24,7 @@ public class MoveController : MonoBehaviour
         //右スティックの値を格納、右側に倒すとｘ軸１に近づき、左に倒すと-1に近ずく。上下の場合、ｙ軸方向。ｚの値はない。最大値は１で、最小値は−１である。
         Vector3 rightStick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
         //ｙ軸をｚ軸に変換
-        Vector3 velocity = new Vector3(rightStick.x /10, 0, rightStick.y / 10);
+        Vector3 velocity = new Vector3(rightStick.x /20, 0, rightStick.y / 20);
 
         // rb.velocity = velocity * moveSpeed;  //加速度を与えて移動
 
@@ -47,7 +46,6 @@ public class MoveController : MonoBehaviour
         if(isFirst)
         {
             isFirst = false;
-            // Vector3 firstImpulse = new Vector3 (0, 0, -10.0f);
             Vector3 firstImpulse = new Vector3 (0, 0, -25.0f);
             rb.AddForce(firstImpulse, ForceMode.Impulse);
         }
@@ -55,7 +53,6 @@ public class MoveController : MonoBehaviour
 
     public void secondPunchPower()
     {
-        // Vector3 distance = new Vector3(0, 0, -1.0f);
         Vector3 distance = new Vector3(0, 0, -4.0f);
         rb.velocity = distance * punchPower;
     }

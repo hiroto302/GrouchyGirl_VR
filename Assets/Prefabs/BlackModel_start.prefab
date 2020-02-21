@@ -3209,7 +3209,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: 372f340fed8424cbea27af1597b9c5a2, type: 2}
   m_Bones:
@@ -3825,7 +3825,7 @@ GameObject:
   - component: {fileID: 4860605898985287238}
   - component: {fileID: 4860605898985287289}
   - component: {fileID: 4860605898985287288}
-  - component: {fileID: 4860605898985287291}
+  - component: {fileID: 295119581}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -3921,7 +3921,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605898985287291
+--- !u!114 &295119581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3930,7 +3930,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605898985287293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1e217c1fa5ac4e26920bc23707928aa, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b48c60523c54a37bfeb788b1496d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -3947,7 +3947,7 @@ GameObject:
   - component: {fileID: 4860605899085161194}
   - component: {fileID: 4860605899085161197}
   - component: {fileID: 4860605899085161196}
-  - component: {fileID: 4860605899085161199}
+  - component: {fileID: 463152713}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4043,7 +4043,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605899085161199
+--- !u!114 &463152713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4052,7 +4052,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605899085161185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbaa99ec28e24a85ad989e25fff58bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0090bc5b52e504382815fa885fef7315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -4069,7 +4069,7 @@ GameObject:
   - component: {fileID: 4860605899354150209}
   - component: {fileID: 4860605899354150208}
   - component: {fileID: 4860605899354150211}
-  - component: {fileID: 4860605899354150210}
+  - component: {fileID: 194286052}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4165,7 +4165,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605899354150210
+--- !u!114 &194286052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4174,7 +4174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605899354150212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155b180c5353a4822b95dddbe3d2e982, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d348846ae98f46ca850de607bc42769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -4191,7 +4191,7 @@ GameObject:
   - component: {fileID: 4860605899568935168}
   - component: {fileID: 4860605899568935171}
   - component: {fileID: 4860605899568935170}
-  - component: {fileID: 4860605899568935173}
+  - component: {fileID: 927069603}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -4287,7 +4287,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605899568935173
+--- !u!114 &927069603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4296,7 +4296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605899568935175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a74f607fa5ca49e3bca1d06765a9d45, type: 3}
+  m_Script: {fileID: 11500000, guid: b9cc536a050ee465a917389875293275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -4313,7 +4313,7 @@ GameObject:
   - component: {fileID: 4860605900340685792}
   - component: {fileID: 4860605900340685795}
   - component: {fileID: 4860605900340685794}
-  - component: {fileID: 4860605900340685797}
+  - component: {fileID: 1094840131}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4409,7 +4409,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605900340685797
+--- !u!114 &1094840131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4418,7 +4418,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605900340685799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a74f607fa5ca49e3bca1d06765a9d45, type: 3}
+  m_Script: {fileID: 11500000, guid: b9cc536a050ee465a917389875293275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -4435,7 +4435,7 @@ GameObject:
   - component: {fileID: 4860605900697683752}
   - component: {fileID: 4860605900697683755}
   - component: {fileID: 4860605900697683754}
-  - component: {fileID: 4860605900697683757}
+  - component: {fileID: 2079867787}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4531,7 +4531,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4860605900697683757
+--- !u!114 &2079867787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4540,7 +4540,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4860605900697683759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbaa99ec28e24a85ad989e25fff58bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0090bc5b52e504382815fa885fef7315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameObj: {fileID: 6971094952542340798}
@@ -5687,7 +5687,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: 4b35429442b2b400c8a1938c4ecf46f9, type: 2}
   m_Bones:
