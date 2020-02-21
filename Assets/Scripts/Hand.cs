@@ -23,7 +23,7 @@ public class Hand : MonoBehaviour
     {
         if(other.gameObject.tag == "Hand")
         {
-            this.animator.SetTrigger("CatTrigger");
+            this.animator.SetTrigger("HandTrigger");
             proxy.ImmediatelySetValue(BlendShapePreset.Blink_R, 1.0f);
             OVRInput.SetControllerVibration(0.3f, 0.3f, OVRInput.Controller.RTouch);
             OVRInput.SetControllerVibration(0.3f, 0.3f, OVRInput.Controller.LTouch);

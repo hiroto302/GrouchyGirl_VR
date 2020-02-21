@@ -22,17 +22,17 @@ using UnityEngine;
 public class OVRPlayerController : MonoBehaviour
 {
 	/// <summary>
-	/// The rate acceleration during movement.
+	/// The rate acceleration during movement. 動いてる時の加速度
 	/// </summary>
 	public float Acceleration = 0.1f;
 
 	/// <summary>
-	/// The rate of damping on movement.
+	/// The rate of damping on movement. 動きの減衰率
 	/// </summary>
 	public float Damping = 0.3f;
 
 	/// <summary>
-	/// The rate of additional damping when moving sideways or backwards.
+	/// The rate of additional damping when moving sideways or backwards. 横または後ろに移動するときの追加の減衰率
 	/// </summary>
 	public float BackAndSideDampen = 0.5f;
 
@@ -42,12 +42,12 @@ public class OVRPlayerController : MonoBehaviour
 	public float JumpForce = 0.3f;
 
 	/// <summary>
-	/// The rate of rotation when using a gamepad.
+	/// The rate of rotation when using a gamepad. ゲームパッドを使用するときの回転速度。
 	/// </summary>
 	public float RotationAmount = 1.5f;
 
 	/// <summary>
-	/// The rate of rotation when using the keyboard.
+	/// The rate of rotation when using the keyboard. キーボード使用時の回転速度。
 	/// </summary>
 	public float RotationRatchet = 45.0f;
 
