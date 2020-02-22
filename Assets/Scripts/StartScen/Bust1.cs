@@ -13,20 +13,25 @@ public class Bust1 : MonoBehaviour
     GameObject fadePanel;
     GameObject cameraRig;
 
+    GameObject wall;
+    GameObject hintBoard;
+
     void Start()
     {
         proxy = gameObj.GetComponent<VRMBlendShapeProxy>();
         this.animator = gameObj.GetComponent<Animator>();
         fadePanel = GameObject.Find("FadePanel");
         cameraRig = GameObject.Find("PlayerController");
+        wall = GameObject.Find("Wall");
+        hintBoard = GameObject.Find("HintBoard");
         // Scene loadScene = SceneManager.GetActiveScene();  //現在のシーンを取得
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A))  //デバック用
         {
-            fadePanel.GetComponent<FadeController>().isFadeOut = true;  //画面のfadeout
+            
         }
     }
 
@@ -38,7 +43,8 @@ public class Bust1 : MonoBehaviour
             OVRInput.SetControllerVibration(0.3f, 0.3f, OVRInput.Controller.RTouch);
             OVRInput.SetControllerVibration(0.3f, 0.3f, OVRInput.Controller.LTouch);
             // Invoke("cameraRig.GetComponent<MoveController>().PunchPower()", 2);
-
+            wall.SetActive(false);
+            hintBoard.SetActive(false);
             this.animator.SetTrigger("AngryTrigger");
             proxy.ImmediatelySetValue(BlendShapePreset.Angry, 1.0f);  //表情の変化 第一引数 BlendShapePreset key(表情の種類) 第二引数表情変化
             fadePanel.GetComponent<FadeController>().isFadeOut = true;  //画面のfadeout
