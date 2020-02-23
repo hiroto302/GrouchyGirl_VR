@@ -23,6 +23,7 @@ public class MoveController_FirstStage : MonoBehaviour
     GameObject searchArea;
     GameObject messagePanel;
 
+
     private Rigidbody rb;
     private float punchPower = 5.0f;
     private float angleSpeed = 5.0f;

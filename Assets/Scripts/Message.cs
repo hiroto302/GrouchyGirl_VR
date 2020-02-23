@@ -44,7 +44,10 @@ public class Message : MonoBehaviour {
     public bool isStartMessage = false;
 
     GameObject playerController;
+
     private MoveController_FirstStage moveController_Firststage;
+
+    GameObject toriiWall;
 
     void Start() {
         clickIcon = transform.Find("MessagePanel/Image").GetComponent<Image>();
@@ -55,6 +58,7 @@ public class Message : MonoBehaviour {
 
         playerController = GameObject.Find("PlayerController");
         moveController_Firststage = playerController.GetComponent<MoveController_FirstStage>();
+        toriiWall = GameObject.Find("ToriiWall");
     }
 
     void Update() {
@@ -116,6 +120,7 @@ public class Message : MonoBehaviour {
                 // メッセージが全部表示されていたらゲームオブジェクト自体の削除
                 if (messageNum >= splitMessage.Length) {
                     moveController_Firststage.SetState(MoveController_FirstStage.State.Normal);
+                    toriiWall.SetActive(false);
                     isEndMessage = true;
                     transform.GetChild(0).gameObject.SetActive(false);
                 }
