@@ -20,7 +20,7 @@ public class HintBoard2: MonoBehaviour
     {
         if(other.gameObject.tag == "Hand")
         {
-            hintText.GetComponent<Text>().text = "緑色に光っている取手を、グリップを握り続けることで持てるよ";
+            hintText.GetComponent<Text>().text = "石壇のライトを、グリップを握り続けることで持てるよ";
         }
     }
 

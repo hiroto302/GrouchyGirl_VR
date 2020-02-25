@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 62926308}
   - component: {fileID: 62926307}
   - component: {fileID: 62926306}
+  - component: {fileID: 62926311}
   m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -298,6 +299,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &62926311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62926305}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &101280402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4277911865700208, guid: a615177f264c1994e8ec4bf1ed235854,
@@ -406,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171582438}
   - component: {fileID: 171582439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3010,7 +3027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324707895}
   - component: {fileID: 1324707896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3163,7 +3180,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1418630050}
-  m_Layer: 0
+  - component: {fileID: 1418630052}
+  - component: {fileID: 1418630051}
+  m_Layer: 9
   m_Name: PlayerLight
   m_TagString: PlayerLight
   m_Icon: {fileID: 0}
@@ -3178,13 +3197,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418630049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72674847, y: -0.185, z: 0.5359955}
-  m_LocalScale: {x: 1, y: 1.25, z: 1}
+  m_LocalPosition: {x: 1.487, y: 0.662, z: -66.588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469453770}
-  m_Father: {fileID: 337368312370909113}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418630051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418630049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2afa491208f45b49d3088ba604d21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1418630052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418630049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.3, z: 0.4}
+  m_Center: {x: 0.2, y: 0.1, z: 0.1}
 --- !u!1 &1444414645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,7 +4562,6 @@ Transform:
   m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4027965286393006071}
-  - {fileID: 1418630050}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5187,7 +5230,7 @@ GameObject:
   - component: {fileID: 3035088599742588774}
   - component: {fileID: 3060588619392753862}
   - component: {fileID: 3053304140416825472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof-Deco-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5205,7 +5248,7 @@ GameObject:
   - component: {fileID: 3026439038938569882}
   - component: {fileID: 3060334993489287570}
   - component: {fileID: 3052346355504365630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Upright-001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5223,7 +5266,7 @@ GameObject:
   - component: {fileID: 3035094614909647266}
   - component: {fileID: 3061288372208250440}
   - component: {fileID: 3052727963670282540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5241,7 +5284,7 @@ GameObject:
   - component: {fileID: 3034892367437235264}
   - component: {fileID: 3059846107967176976}
   - component: {fileID: 3052346724827795252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Upright-004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5259,7 +5302,7 @@ GameObject:
   - component: {fileID: 3026819091749113172}
   - component: {fileID: 3060443845929166666}
   - component: {fileID: 3051816052121195720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5277,7 +5320,7 @@ GameObject:
   - component: {fileID: 3026714558720871542}
   - component: {fileID: 3060237463827796336}
   - component: {fileID: 3051977029654150600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof-Peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5295,7 +5338,7 @@ GameObject:
   - component: {fileID: 3026587175897223252}
   - component: {fileID: 3061250668120709142}
   - component: {fileID: 3051867204831823372}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Upright-003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5313,7 +5356,7 @@ GameObject:
   - component: {fileID: 3026978081225751538}
   - component: {fileID: 3060572178331374960}
   - component: {fileID: 3051959115600529388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-Frame-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5374,7 @@ GameObject:
   - component: {fileID: 3026885611002320258}
   - component: {fileID: 3060658770755716536}
   - component: {fileID: 3051889009039170728}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5349,7 +5392,7 @@ GameObject:
   - component: {fileID: 3026810248371145006}
   - component: {fileID: 3061287933379031314}
   - component: {fileID: 3052416511914433772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-Frame-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5410,7 @@ GameObject:
   - component: {fileID: 3026804303089357404}
   - component: {fileID: 3060478583876821032}
   - component: {fileID: 3052369206222645228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-Frame-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5385,7 +5428,7 @@ GameObject:
   - component: {fileID: 3026774348808046202}
   - component: {fileID: 3060484684470184086}
   - component: {fileID: 3052146836330352384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Upright-002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5403,7 +5446,7 @@ GameObject:
   - component: {fileID: 3035394011856147552}
   - component: {fileID: 3059704566915304286}
   - component: {fileID: 3052382141130327428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof-Deco-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5421,7 +5464,7 @@ GameObject:
   - component: {fileID: 3035402168089146908}
   - component: {fileID: 3059711667777351086}
   - component: {fileID: 3052140914489791176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5438,7 +5481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3035185427218642254}
   - component: {fileID: 3029644702770730229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light
   m_TagString: PlayerLight
   m_Icon: {fileID: 0}
@@ -5469,7 +5512,7 @@ GameObject:
   - component: {fileID: 3034894060461136276}
   - component: {fileID: 3061077301789727560}
   - component: {fileID: 3053330389779864100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5487,7 +5530,7 @@ GameObject:
   - component: {fileID: 3026827058988399600}
   - component: {fileID: 3060311566833715806}
   - component: {fileID: 3051763863975083986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5505,7 +5548,7 @@ GameObject:
   - component: {fileID: 3026872089928733436}
   - component: {fileID: 3060270011113849210}
   - component: {fileID: 3051902595692611252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflector-Frame-03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
