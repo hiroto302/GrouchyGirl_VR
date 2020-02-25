@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ZombieController : MonoBehaviour
 {
     public enum State
     {
         Wait,
-        Walk
+        Walk,
+        Chase,
+        Attack
     }
 
     //目的地
@@ -31,6 +34,11 @@ public class ZombieController : MonoBehaviour
     //待機する時間
     [SerializeField]
     private float waitTime = 5f;
+    GameObject player;
+    Vector3 playerPosition; //player位置
+    Vector3 zombiPosition; //ゾンビの位置
+
+    private Transform playerTransform;
 
     void OnEnable() {
     }
@@ -38,6 +46,7 @@ public class ZombieController : MonoBehaviour
     private void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        player = GameObject.Find("OVRCameraRig");
         //巡回地点を設定
         patrolPositions = new Transform[patrolPointsParent.transform.childCount];
         for (int i = 0; i < patrolPointsParent.transform.childCount; i++) {
@@ -47,6 +56,10 @@ public class ZombieController : MonoBehaviour
     }
 
     void Update() {
+
+        playerPosition = player.transform.position;
+        zombiPosition = transform.position;
+
         //見回り
         if (state == State.Walk) {
             //エージェントの潜在的な速さを設定
@@ -60,15 +73,15 @@ public class ZombieController : MonoBehaviour
         } else if (state == State.Wait) {
             elapsedTime += Time.deltaTime;
 
-            //　待ち時間を越えたら次の目的地を設定
+            //待ち時間を越えたら次の目的地を設定
             if (elapsedTime > waitTime) {
                 SetState(State.Walk);
             }
         }
     }
 
-    //村人の状態変更
-    public void SetState(State state) {
+    //ゾンビの状態変更
+    public void SetState(State state, Transform targetObj = null) {
         this.state = state;
         if (state == State.Wait) {
             elapsedTime = 0f;
@@ -76,6 +89,16 @@ public class ZombieController : MonoBehaviour
         } else if(state == State.Walk) {
             SetNextPosition();
             navMeshAgent.SetDestination(GetDestination());
+        }
+        else if(state == State.Chase)
+        {
+            // navMeshAgent.destination = playerPosition;
+            // navMeshAgent.SetDestination(playerPosition);
+            // playerTransform = targetObj;
+        }
+        else if(state == State.Attack)
+        {
+            Attack();
         }
     }
 
@@ -95,5 +118,20 @@ public class ZombieController : MonoBehaviour
     //目的地を取得する
     public Vector3 GetDestination() {
         return destination;
+    }
+
+    public State GetState()
+    {
+        return state;
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+        Invoke("GameOver", 1.5f);
+    }
+    void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
