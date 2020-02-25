@@ -6,24 +6,24 @@ using UnityEngine.UI;
 public class MoveController : MonoBehaviour
 {
 
-    public enum State
-    {
-        Normal,
-        Talk
-    }
+    // public enum State
+    // {
+    //     Normal,
+    //     Talk
+    // }
 
     // Playerの状態
-    private State state;
+    // private State state;
     // Player会話処理スクリプト
     // private PlayerTalkScript playerTalkScript;
-    private MessageTalkScript messageTalkScript;
+    // private MessageTalkScript messageTalkScript;
 
-    private Message message;
+    // private Message message;
 
-    GameObject messageUI;
+    // GameObject messageUI;
 
-    GameObject searchArea;
-    GameObject messagePanel;
+    // GameObject searchArea;
+    // GameObject messagePanel;
 
 
 
@@ -46,14 +46,14 @@ public class MoveController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         tf = gameObject.GetComponent<Transform>();
-        state = State.Normal;
+        // state = State.Normal;
         // playerTalkScript = GetComponent<PlayerTalkScript>();
-        messageTalkScript = gameObject.GetComponent<MessageTalkScript>();
+        // messageTalkScript = gameObject.GetComponent<MessageTalkScript>();
         // message = GetComponent<Message>();
-        messageUI = GameObject.Find("MessageUI");
-        message = messageUI.GetComponent<Message>();
-        searchArea = GameObject.Find("SearchArea");
-        messagePanel = GameObject.Find("MessagePanel");
+        // messageUI = GameObject.Find("MessageUI");
+        // message = messageUI.GetComponent<Message>();
+        // searchArea = GameObject.Find("SearchArea");
+        // messagePanel = GameObject.Find("MessagePanel");
 
 
 
@@ -75,8 +75,8 @@ public class MoveController : MonoBehaviour
 
         // tf.Rotate(angle / 2);
 
-        if(state == State.Normal)
-        {
+        // if(state == State.Normal)
+        // {
             //右スティックの値を格納、右側に倒すとｘ軸１に近づき、左に倒すと-1に近ずく。上下の場合、ｙ軸方向。ｚの値はない。最大値は１で、最小値は−１である。
             Vector3 rightStick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
             //ｙ軸をｚ軸に変換
@@ -92,50 +92,50 @@ public class MoveController : MonoBehaviour
             // {
             //     SetState(State.Talk);
             // }
-            if(messageTalkScript.GetConversationPartner() != null && Input.GetKeyDown(KeyCode.S))
-            {
-                // SetState(State.Talk);
-                message.MessageStart();
-                messageTalkScript.MessageIconOff();
-                messageTalkScript.enabled = false;
-                Destroy(searchArea);
-                messagePanel.GetComponent<Image>().enabled = true;
+            // if(messageTalkScript.GetConversationPartner() != null && Input.GetKeyDown(KeyCode.S))
+            // {
+            //     // SetState(State.Talk);
+            //     message.MessageStart();
+            //     messageTalkScript.MessageIconOff();
+            //     messageTalkScript.enabled = false;
+            //     Destroy(searchArea);
+            //     messagePanel.GetComponent<Image>().enabled = true;
 
 
-            }
+            // }
         }
-            // デバッグ用
-            if(Input.GetKeyDown(KeyCode.D))
-            {
-                Vector3 velocity = new Vector3( 1, 0, 0);
-                tf.Translate(velocity);
-            }
-            if(Input.GetKeyDown(KeyCode.A))
-            {
-                Vector3 velocity = new Vector3( -1, 0, 0);
-                tf.Translate(velocity);
-            }
-            if(Input.GetKeyDown(KeyCode.W))
-            {
-                Vector3 velocity = new Vector3( 0, 0, 1);
-                tf.Translate(velocity);
-            }
-            if(Input.GetKeyDown(KeyCode.X))
-            {
-                Vector3 velocity = new Vector3( 0, 0, -1);
-                tf.Translate(velocity);
-            }
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                Vector3 angle = new Vector3( 15, 0, 0);
-                tf.Rotate(angle);
-            }
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                Vector3 angle = new Vector3( -15, 0, 0);
-                tf.Rotate(angle);
-            }
-    }
+            // // デバッグ用
+            // if(Input.GetKeyDown(KeyCode.D))
+            // {
+            //     Vector3 velocity = new Vector3( 1, 0, 0);
+            //     tf.Translate(velocity);
+            // }
+            // if(Input.GetKeyDown(KeyCode.A))
+            // {
+            //     Vector3 velocity = new Vector3( -1, 0, 0);
+            //     tf.Translate(velocity);
+            // }
+            // if(Input.GetKeyDown(KeyCode.W))
+            // {
+            //     Vector3 velocity = new Vector3( 0, 0, 1);
+            //     tf.Translate(velocity);
+            // }
+            // if(Input.GetKeyDown(KeyCode.X))
+            // {
+            //     Vector3 velocity = new Vector3( 0, 0, -1);
+            //     tf.Translate(velocity);
+            // }
+            // if(Input.GetKeyDown(KeyCode.Q))
+            // {
+            //     Vector3 angle = new Vector3( 15, 0, 0);
+            //     tf.Rotate(angle);
+            // }
+            // if(Input.GetKeyDown(KeyCode.E))
+            // {
+            //     Vector3 angle = new Vector3( -15, 0, 0);
+            //     tf.Rotate(angle);
+            // }
+
 
 
     // 状態変更と初期設定
@@ -149,10 +149,10 @@ public class MoveController : MonoBehaviour
     //     }
     // }
 
-    public State GetState()
-    {
-        return state;
-    }
+    // public State GetState()
+    // {
+    //     return state;
+    // }
 
 
     //怒らせて、殴られた後後方に吹き飛ぶ機能
