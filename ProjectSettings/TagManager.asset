@@ -7,6 +7,9 @@ TagManager:
   - Hand
   - PlayerLight
   - PlayerController
+  - Enemy
+  - Sowrd
+  - Sword
   layers:
   - Default
   - TransparentFX
