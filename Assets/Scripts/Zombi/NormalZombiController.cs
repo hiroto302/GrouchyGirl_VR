@@ -35,16 +35,13 @@ public class NormalZombiController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Walkがfalseだよ");
         if(walk == false)
         {
             return;
         }
-        Debug.Log("Walkがtrueだよ");
         playerPosition = player.transform.position;
         navMeshAgent.SetDestination(playerPosition);  //プレイヤーを追跡
         distance = Vector3.Distance(transform.position, playerPosition);
-        Debug.Log(distance);
         if(distance < 2.5f)
         {
             SetState(State.Attack);
@@ -58,7 +55,6 @@ public class NormalZombiController : MonoBehaviour
         {
             animator.SetTrigger("Walk");
             walk = true;
-            Debug.Log("Walk状態になったよ");
         }
         else if(state == State.Attack)
         {
@@ -90,7 +86,6 @@ public class NormalZombiController : MonoBehaviour
         else if(other.gameObject.tag == "Hand")
         {
             AttackPlayer();  //子オブジェクトのSearchAreatriggerに反応してる！？  ifの条件式に条件を追加、または他の方法で実装 今回は距離の計算でAttackを実装
-            Debug.Log("player死亡");
         }
     }
 
