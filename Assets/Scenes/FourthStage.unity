@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 336929944}
   - component: {fileID: 336929945}
   m_Layer: 0
-  m_Name: BreakableZombie
+  m_Name: BreakablZombie_Sample
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,7 +2276,7 @@ Animator:
   m_GameObject: {fileID: 336929943}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cdd9a8a49378b5d43b3ad16db56e8998, type: 3}
-  m_Controller: {fileID: 9100000, guid: b10ea5e81dd5146fa96047d02d8295cc, type: 2}
+  m_Controller: {fileID: 9100000, guid: a7ac5c1930127421ebe0e783d54860fc, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
