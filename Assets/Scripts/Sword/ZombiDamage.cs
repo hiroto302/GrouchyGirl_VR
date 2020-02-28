@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ZombiDamage : MonoBehaviour
 {
+
+    private BreakToriiWall_1 torii;
+    GameObject toriiWall;
     void Start()
     {
-        
+        toriiWall = GameObject.Find("ToriiWall_1");
+        torii = toriiWall.GetComponent<BreakToriiWall_1>();
     }
 
     void Update()
@@ -44,6 +48,7 @@ public class ZombiDamage : MonoBehaviour
             Debug.Log("発動したよ");
             // Destroy(transform.parent.gameObject);
             Destroy(gameObject);
+            torii.Decrease(1);
         }
     }
 }

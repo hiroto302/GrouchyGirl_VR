@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Sowrd
   - Sword
+  - Fire
   layers:
   - Default
   - TransparentFX
