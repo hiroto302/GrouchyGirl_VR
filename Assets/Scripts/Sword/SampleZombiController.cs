@@ -14,6 +14,9 @@ public class SampleZombiController : MonoBehaviour
     private State state;
     private Animator animator;
 
+    public GameObject damageEffect;  //攻撃された時のeffect
+    public GameObject explosion;  //爆発prefab
+
     private BreakToriiWall_1 torii;
     GameObject toriiWall;
 
@@ -36,10 +39,9 @@ public class SampleZombiController : MonoBehaviour
         if(state == State.Death)
         {
             animator.SetTrigger("Damage");
-            Invoke("Death", 3.0f);
+            Invoke("Death", 2.5f);
         }
     }
-
 
     public void OnTriggerEnter(Collider other)
     {
@@ -47,9 +49,8 @@ public class SampleZombiController : MonoBehaviour
         {
             OVRInput.SetControllerVibration(0.2f, 0.2f, OVRInput.Controller.RTouch);
             OVRInput.SetControllerVibration(0.2f, 0.2f, OVRInput.Controller.LTouch);
-            Debug.Log("発動したよ");
             // Destroy(transform.parent.gameObject);
-            // Destroy(gameObject);
+            Instantiate(damageEffect, gameObject.transform.position, Quaternion.identity);
             SetState(State.Death);
             torii.Decrease(1);
         }
@@ -57,6 +58,7 @@ public class SampleZombiController : MonoBehaviour
 
     public void Death()
     {
+        Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
