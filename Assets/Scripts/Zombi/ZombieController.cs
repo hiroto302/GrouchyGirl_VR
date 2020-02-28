@@ -133,5 +133,6 @@ public class ZombieController : MonoBehaviour
     void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }
