@@ -46,6 +46,10 @@ public class NormalZombiController : MonoBehaviour
         {
             SetState(State.Attack);
         }
+        else if (distance < 0.5f)
+        {
+            // AttackPlayer();
+        }
     }
 
     public void SetState(State state)
@@ -82,7 +86,6 @@ public class NormalZombiController : MonoBehaviour
             Instantiate(damageEffect, gameObject.transform.position, Quaternion.identity);
             SetState(State.Death);
         }
-        // else if(other.gameObject.tag == "Hand")
         else if(other.gameObject.tag == "Hand")
         {
             AttackPlayer();  //子オブジェクトのSearchAreatriggerに反応してる！？  ifの条件式に条件を追加、または他の方法で実装 今回は距離の計算でAttackを実装

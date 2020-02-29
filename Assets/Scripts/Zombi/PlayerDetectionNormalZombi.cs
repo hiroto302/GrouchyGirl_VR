@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerDetectionNormalZombi : MonoBehaviour
 {
     private NormalZombiController zombi;
-    private GameObject normalZombi;
+    // private GameObject normalZombi;
+    GameObject[] normalZombis;  //複数のゾンビをコントロールするために配列に変更
     void Start()
     {
-        normalZombi = GameObject.Find("BreakablZombie_Normal");
-        zombi = normalZombi.GetComponent<NormalZombiController>();
+        // normalZombi = GameObject.Find("BreakablZombie_Normal");
+        // zombi = normalZombi.Getcomponent<NormalZombiController>();
+
+        normalZombis = GameObject.FindGameObjectsWithTag("NormalZombie");
     }
 
     void Update()
@@ -17,12 +20,23 @@ public class PlayerDetectionNormalZombi : MonoBehaviour
         
     }
 
+    // void OnTriggerEnter(Collider col)
+    // {
+    //     if (col.tag == "Hand")
+    //     {
+    //         zombi.SetState(NormalZombiController.State.Walk);
+    //     }
+    // }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Hand")
         {
-            zombi.SetState(NormalZombiController.State.Walk);
-            Debug.Log("trigger発動");
+            foreach(var enemy in normalZombis)
+            {
+                zombi = enemy.GetComponent<NormalZombiController>();
+                zombi.SetState(NormalZombiController.State.Walk);
+            }
         }
     }
 }
