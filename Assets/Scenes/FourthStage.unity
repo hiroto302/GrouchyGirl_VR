@@ -5257,6 +5257,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakablZombie_Normal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 579715027243840320, guid: 45aa5c1e5aeff455c9045c2906a6129b,
+        type: 3}
+      propertyPath: m_TagString
+      value: NormalZombie
+      objectReference: {fileID: 0}
     - target: {fileID: 579715027243840335, guid: 45aa5c1e5aeff455c9045c2906a6129b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5311,6 +5316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579715027243840330, guid: 45aa5c1e5aeff455c9045c2906a6129b,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45aa5c1e5aeff455c9045c2906a6129b, type: 3}
@@ -6099,6 +6109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakablZombie_Normal
       objectReference: {fileID: 0}
+    - target: {fileID: 579715027243840320, guid: 45aa5c1e5aeff455c9045c2906a6129b,
+        type: 3}
+      propertyPath: m_TagString
+      value: NormalZombie
+      objectReference: {fileID: 0}
     - target: {fileID: 579715027243840335, guid: 45aa5c1e5aeff455c9045c2906a6129b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6153,6 +6168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579715027243840330, guid: 45aa5c1e5aeff455c9045c2906a6129b,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45aa5c1e5aeff455c9045c2906a6129b, type: 3}

@@ -12,6 +12,8 @@ TagManager:
   - Sword
   - Fire
   - NormalZombie
+  - NormalZombi
+  - FirstZombie
   layers:
   - Default
   - TransparentFX
