@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-public class FirstManZombieController : MonoBehaviour
+public class FirstManZombieController_Ver2 : MonoBehaviour
 {
     public enum State
     {
@@ -23,61 +23,57 @@ public class FirstManZombieController : MonoBehaviour
     private GameObject player;
     private Vector3 playerPosition;
     private float distance;
-    private bool chase;
-    private bool attack;
     [SerializeField]
     private int hp = 5;  //ゾンビの体力
+    private float elapsedTime;  //状態変更までの時間
 
-    private float elapsedTime;  //遷移時間の計測
+    private GameObject toriiWall;
     void Start()
     {
         SetState(State.Wait);
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("OVRCameraRig");
-        chase = false;
-        attack = true;
+
+        toriiWall = GameObject.Find("ToriiWall_1");
+
     }
 
     void Update()
     {
-        Debug.Log(state+"状態だよ");
-        Debug.Log("attack = " + attack);
-        Debug.Log("chase = " + chase);
-
         //フレーム毎に実行されている
-        if(chase == true)
+        distance = Vector3.Distance(transform.position, playerPosition);
+
+        if(state == State.Walk)
         {
             playerPosition = player.transform.position;
             navMeshAgent.SetDestination(playerPosition);
-
-            if(attack == true)
+            if(distance < 2.5f)
             {
-                distance = Vector3.Distance(transform.position, playerPosition);
-                if(distance < 2.5f)
-                {
-                    SetState(State.Attack);  //アタック状態
-                }
+                SetState(State.Attack);  //アタック状態
             }
         }
-
-        if(state == State.Attack)
+        else if (state == State.Attack)
         {
+            playerPosition = player.transform.position;
+            navMeshAgent.SetDestination(playerPosition);
             elapsedTime += Time.deltaTime;
             if(elapsedTime > 2.0f)
             {
-                SetState(State.Walk);
+                if(state != State.Damage)
+                {
+                    SetState(State.Walk);
+                }
             }
         }
-        else if(state == State.Damage)
+        else if (state == State.Damage)
         {
-            elapsedTime = Time.deltaTime;
-            if(elapsedTime > 3.7f)
+            elapsedTime += Time.deltaTime;
+            if(elapsedTime > 3.5f)
             {
                 SetState(State.Walk);
             }
         }
-
     }
 
     public void SetState(State state)
@@ -86,41 +82,19 @@ public class FirstManZombieController : MonoBehaviour
         if(state == State.Walk)
         {
             animator.SetTrigger("Walk");
-            chase = true;
-            attack = true;
         }
         else if (state == State.Attack)
         {
-            animator.SetTrigger("Attack");
-            chase = true;
-            attack = false;
             elapsedTime = 0;
-            // ここの記述がバグの原因となっている。
-            // playerが攻撃する時、distanceが2.5f以下になるのでAttack状態のゾンビを攻撃することになる
-            // その状態で攻撃を受けた時には、すでにInvoke("Walk",2.0f)が実行されていて、
-            // damage状態でもすぐにWalk状態に遷移してしまうため挙動がおかしくなっていた
-            // そこで,elapseTimeを導入し解決した
-            // if(state != State.Damage)
-            // {
-            //     Invoke("Walk", 2.0f);
-            // }
+            animator.SetTrigger("Attack");
         }
         else if (state == State.Damage)
         {
-            chase = false;
-            attack = false;
-            animator.SetTrigger("Damage");
             elapsedTime = 0;
-            // if(state != State.Death)
-            // {
-                // Invoke("Walk", 4.0f);
-            // Invoke("Walk", 4.0f);
-            // }
+            animator.SetTrigger("Damage");
         }
         else if (state == State.Death)
         {
-            chase = false;
-            attack = false;
             animator.SetTrigger("Death");
             Invoke("Death", 3.0f);
         }
@@ -137,12 +111,10 @@ public class FirstManZombieController : MonoBehaviour
             {
                 DecreaseHP(1);
             }
-            // SetState(State.Damage);  //これもdecreaseHpのメソッド中に入れた方がいいかも
         }
         else if(other.gameObject.tag == "Hand")
         {
-            GetState();
-            if(state != State.Death || state != State.Damage)
+            if(state == State.Attack)
             {
                 AttackPlayer();
             }
@@ -150,7 +122,7 @@ public class FirstManZombieController : MonoBehaviour
 
     }
 
-    //ゾンビの体力
+    //ゾンビの体力減少
     public void DecreaseHP(int damage)
     {
         hp = hp - damage;
@@ -170,19 +142,15 @@ public class FirstManZombieController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    // ゾンビの消滅
+    // ゾンビの消滅 および ToriiWall の破壊
     public void Death()
     {
+        Destroy(toriiWall);
         Destroy(gameObject);
     }
     // 現在の状態取得
     public State GetState()
     {
         return state;
-    }
-
-    public void Walk()
-    {
-        SetState(State.Walk);
     }
 }
