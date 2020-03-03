@@ -14,6 +14,7 @@ TagManager:
   - NormalZombie
   - NormalZombi
   - FirstZombie
+  - MagicHand
   layers:
   - Default
   - TransparentFX
