@@ -6,13 +6,10 @@ public class AttackedByMagic : MonoBehaviour
 {
     public GameObject damageEffect;
     private Animator animator;
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,13 +18,29 @@ public class AttackedByMagic : MonoBehaviour
     {
         if(other.gameObject.tag == "FireMagic")
         {
-            Debug.Log("魔法をくらったよ");
             Instantiate(damageEffect, transform.position, Quaternion.identity);
-            animator.SetTrigger("Damage");
+            DamageAnim();
             Invoke("DestroyZombie", 3.0f);
         }
     }
 
+    //アニメーションランダム再生
+    public void DamageAnim()
+    {
+        int x = Random.Range(1, 3);
+        if(x == 1)
+        {
+            animator.SetTrigger("Damage");
+        }
+        else if(x == 2)
+        {
+            animator.SetTrigger("Damage2");
+        }
+        else if(x == 3)
+        {
+            animator.SetTrigger("Damage3");
+        }
+    }
     public void DestroyZombie()
     {
         Destroy(gameObject);
