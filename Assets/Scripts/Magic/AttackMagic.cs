@@ -26,8 +26,7 @@ public class AttackMagic : MonoBehaviour
 
         if(other.gameObject.tag == "SampleZombie")
         {
-            Debug.Log("SampleZombieにふれたよ");
-            // Destroy(other.gameObject);
+            
         }
     }
 }

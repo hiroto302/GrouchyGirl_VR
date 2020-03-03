@@ -6,9 +6,13 @@ public class AttackedByMagic : MonoBehaviour
 {
     public GameObject damageEffect;
     private Animator animator;
+    private StopCube stopCube;
+    private GameObject cube;
     void Start()
     {
         animator = GetComponent<Animator>();
+        cube = GameObject.Find("StopCube");
+        stopCube = cube.GetComponent<StopCube>();
     }
     void Update()
     {
@@ -18,9 +22,11 @@ public class AttackedByMagic : MonoBehaviour
     {
         if(other.gameObject.tag == "FireMagic")
         {
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;  //重複してtrigger発動しないように対応
             Instantiate(damageEffect, transform.position, Quaternion.identity);
             DamageAnim();
             Invoke("DestroyZombie", 3.0f);
+            stopCube.DecreaseHp();
         }
     }
 

@@ -15,6 +15,9 @@ TagManager:
   - NormalZombi
   - FirstZombie
   - MagicHand
+  - FireMagic
+  - Breakable
+  - SampleZombie
   layers:
   - Default
   - TransparentFX
