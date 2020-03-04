@@ -18,6 +18,7 @@ TagManager:
   - FireMagic
   - Breakable
   - SampleZombie
+  - RotatorMagic
   layers:
   - Default
   - TransparentFX

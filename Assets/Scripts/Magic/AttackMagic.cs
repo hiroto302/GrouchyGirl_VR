@@ -28,5 +28,10 @@ public class AttackMagic : MonoBehaviour
         {
             
         }
+
+        if(other.gameObject.tag == "Soul")
+        {
+            
+        }
     }
 }
